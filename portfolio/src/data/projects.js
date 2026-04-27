@@ -1,3 +1,6 @@
+import brioProyectoImage from "../assets/brioproyecto.png";
+import ecommerceImage from "../assets/ecommerce.png";
+
 export const projects = [
   {
     slug: "sistema-brio",
@@ -9,6 +12,7 @@ export const projects = [
       es: "Proyecto empresarial",
       en: "Company project",
     },
+    image: brioProyectoImage,
     url: "https://sistema-brio.azurewebsites.net/",
     github: "",
     description: {
@@ -57,6 +61,7 @@ export const projects = [
       es: "Proyecto personal",
       en: "Personal project",
     },
+    image: ecommerceImage,
     url: "https://fullstack-ecommerce-green-two.vercel.app/",
     github: "",
     description: {
