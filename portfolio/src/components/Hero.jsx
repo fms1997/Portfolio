@@ -21,20 +21,32 @@ const texts = {
   },
 };
 
-const Hero = ({ lang }) => {
+const Hero = ({ lang, theme }) => {
   const t = texts[lang];
+  const isLight = theme === "light";
 
   return (
     <section id="inicio" className="min-h-screen flex items-center pt-24 px-6">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
-          <p className="text-blue-400 mb-4 font-medium">{t.role}</p>
+          <p className={isLight ? "mb-4 font-medium text-blue-700" : "mb-4 font-medium text-blue-400"}>
+            {t.role}
+          </p>
 
           <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-            {t.greeting} <span className="text-blue-400">Franco Sassi</span>
+            {t.greeting}{" "}
+            <span className={isLight ? "text-black" : "text-blue-400"}>Franco Sassi</span>
           </h1>
 
-          <p className="text-slate-300 mt-6 text-lg leading-relaxed">{t.summary}</p>
+          <p
+            className={
+              isLight
+                ? "mt-6 text-lg leading-relaxed text-black"
+                : "mt-6 text-lg leading-relaxed text-slate-300"
+            }
+          >
+            {t.summary}
+          </p>
 
           <div className="flex flex-wrap gap-4 mt-8">
             <a
@@ -47,7 +59,11 @@ const Hero = ({ lang }) => {
             <a
               href={cv}
               download
-              className="border border-slate-600 hover:border-blue-400 px-6 py-3 rounded-xl font-medium transition"
+              className={`px-6 py-3 rounded-xl font-medium transition ${
+                isLight
+                  ? "border border-slate-500 hover:border-blue-400"
+                  : "border border-slate-600 hover:border-blue-400"
+              }`}
             >
               {t.downloadCv}
             </a>
@@ -57,7 +73,7 @@ const Hero = ({ lang }) => {
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="bg-slate-900 border border-slate-800 rounded-3xl p-8 shadow-xl text-center"
+          className="bg-slate-900 border border-slate-800 rounded-3xl p-8 shadow-xl text-center text-slate-100"
         >
           <img
             src={profile}

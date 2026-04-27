@@ -23,7 +23,7 @@ const Projects = ({ lang }) => {
   const t = texts[lang];
 
   return (
-    <section id="proyectos" className="py-24 px-4 sm:px-6 bg-slate-900">
+    <section id="proyectos" className="py-24 px-4 sm:px-6 bg-slate-900 text-slate-100">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold mb-10">{t.title}</h2>
 

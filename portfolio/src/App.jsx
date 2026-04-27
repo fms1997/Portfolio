@@ -14,11 +14,11 @@ function App() {
       <Navbar theme={theme} setTheme={setTheme} lang={lang} setLang={setLang} />
 
       <Routes>
-        <Route path="/" element={<Home lang={lang} />} />
+        <Route path="/" element={<Home lang={lang} theme={theme} />} />
         <Route path="/proyecto/:slug" element={<ProjectDetail lang={lang} />} />
       </Routes>
 
-      <Footer lang={lang} />
+      <Footer lang={lang} theme={theme} />
     </div>
   );
 }

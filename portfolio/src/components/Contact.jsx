@@ -23,8 +23,9 @@ const texts = {
   },
 };
 
-const Contact = ({ lang }) => {
+const Contact = ({ lang, theme }) => {
   const t = texts[lang];
+  const isLight = theme === "light";
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -54,7 +55,7 @@ const Contact = ({ lang }) => {
 
         <form
           onSubmit={handleSubmit}
-          className="bg-slate-900 border border-slate-800 rounded-3xl p-8 space-y-5"
+          className="bg-slate-900 border border-slate-800 rounded-3xl p-8 space-y-5 text-slate-100"
         >
           <input
             type="text"
@@ -63,7 +64,9 @@ const Contact = ({ lang }) => {
             value={form.name}
             onChange={handleChange}
             required
-            className="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 outline-none focus:border-blue-400"
+            className={`w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 outline-none focus:border-blue-400 ${
+              isLight ? "text-slate-100 placeholder:text-slate-400" : "text-white placeholder:text-slate-500"
+            }`}
           />
 
           <input
@@ -73,7 +76,9 @@ const Contact = ({ lang }) => {
             value={form.email}
             onChange={handleChange}
             required
-            className="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 outline-none focus:border-blue-400"
+            className={`w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 outline-none focus:border-blue-400 ${
+              isLight ? "text-slate-100 placeholder:text-slate-400" : "text-white placeholder:text-slate-500"
+            }`}
           />
 
           <textarea
@@ -83,12 +88,14 @@ const Contact = ({ lang }) => {
             value={form.message}
             onChange={handleChange}
             required
-            className="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 outline-none focus:border-blue-400"
+            className={`w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 outline-none focus:border-blue-400 ${
+              isLight ? "text-slate-100 placeholder:text-slate-400" : "text-white placeholder:text-slate-500"
+            }`}
           />
 
           <button
             type="submit"
-            className="w-full bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-xl font-medium transition"
+            className="w-full bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-xl font-medium transition text-white"
           >
             {t.button}
           </button>

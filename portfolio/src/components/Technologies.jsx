@@ -22,7 +22,8 @@ const titles = {
   en: "Technologies",
 };
 
-const Technologies = ({ lang }) => {
+const Technologies = ({ lang, theme }) => {
+  const isLight = theme === "light";
   return (
     <section id="tecnologias" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
@@ -32,7 +33,9 @@ const Technologies = ({ lang }) => {
           {technologies.map((tech) => (
             <span
               key={tech}
-              className="bg-slate-900 border border-slate-700 px-5 py-3 rounded-xl text-slate-300 hover:border-blue-400 hover:text-blue-400 transition"
+              className={`bg-slate-900 border border-slate-700 px-5 py-3 rounded-xl hover:border-blue-400 hover:text-blue-400 transition ${
+                isLight ? "text-slate-200" : "text-slate-300"
+              }`}
             >
               {tech}
             </span>
