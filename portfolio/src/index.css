@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  transition: background 0.3s, color 0.3s;
+}
+
+.dark {
+  background: #0f172a;
+  color: white;
+}
+
+.light {
+  background: #f8fafc;
+  color: #0f172a;
+}

@@ -1,0 +1,66 @@
+import { motion } from "framer-motion";
+import profile from "../assets/profile.jpg";
+import cv from "../assets/cv-franco-sassi.pdf";
+
+const Hero = () => {
+  return (
+    <section id="inicio" className="min-h-screen flex items-center pt-24 px-6">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
+          <p className="text-blue-400 mb-4 font-medium">
+            Desarrollador Full Stack
+          </p>
+
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+            Hola, soy <span className="text-blue-400">Franco Sassi</span>
+          </h1>
+
+          <p className="text-slate-300 mt-6 text-lg leading-relaxed">
+            Desarrollo sistemas web modernos con React, ASP.NET Core y SQL Server.
+            Me especializo en soluciones empresariales, facturación electrónica,
+            logística, APIs REST y automatización de procesos.
+          </p>
+
+          <div className="flex flex-wrap gap-4 mt-8">
+            <a
+              href="#proyectos"
+              className="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-xl font-medium transition"
+            >
+              Ver proyectos
+            </a>
+
+            <a
+              href={cv}
+              download
+              className="border border-slate-600 hover:border-blue-400 px-6 py-3 rounded-xl font-medium transition"
+            >
+              Descargar CV
+            </a>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="bg-slate-900 border border-slate-800 rounded-3xl p-8 shadow-xl text-center"
+        >
+          <img
+            src={profile}
+            alt="Franco Sassi"
+            className="w-44 h-44 mx-auto rounded-full object-cover border-4 border-blue-400"
+          />
+
+          <h2 className="text-2xl font-bold mt-6">Franco Sassi</h2>
+          <p className="text-slate-400 mt-2">
+            React · ASP.NET Core · SQL Server
+          </p>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
