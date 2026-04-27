@@ -2,34 +2,46 @@ import { motion } from "framer-motion";
 import profile from "../assets/profile.jpg";
 import cv from "../assets/cv-franco-sassi.pdf";
 
-const Hero = () => {
+const texts = {
+  es: {
+    role: "Desarrollador Full Stack",
+    greeting: "Hola, soy",
+    summary:
+      "Desarrollo sistemas web modernos con React, ASP.NET Core y SQL Server. Me especializo en soluciones empresariales, facturación electrónica, logística, APIs REST y automatización de procesos.",
+    viewProjects: "Ver proyectos",
+    downloadCv: "Descargar CV",
+  },
+  en: {
+    role: "Full Stack Developer",
+    greeting: "Hi, I'm",
+    summary:
+      "I build modern web systems with React, ASP.NET Core and SQL Server. I specialize in business solutions, electronic invoicing, logistics, REST APIs and process automation.",
+    viewProjects: "View projects",
+    downloadCv: "Download CV",
+  },
+};
+
+const Hero = ({ lang }) => {
+  const t = texts[lang];
+
   return (
     <section id="inicio" className="min-h-screen flex items-center pt-24 px-6">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
-          <p className="text-blue-400 mb-4 font-medium">
-            Desarrollador Full Stack
-          </p>
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
+          <p className="text-blue-400 mb-4 font-medium">{t.role}</p>
 
           <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-            Hola, soy <span className="text-blue-400">Franco Sassi</span>
+            {t.greeting} <span className="text-blue-400">Franco Sassi</span>
           </h1>
 
-          <p className="text-slate-300 mt-6 text-lg leading-relaxed">
-            Desarrollo sistemas web modernos con React, ASP.NET Core y SQL Server.
-            Me especializo en soluciones empresariales, facturación electrónica,
-            logística, APIs REST y automatización de procesos.
-          </p>
+          <p className="text-slate-300 mt-6 text-lg leading-relaxed">{t.summary}</p>
 
           <div className="flex flex-wrap gap-4 mt-8">
             <a
               href="#proyectos"
               className="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-xl font-medium transition"
             >
-              Ver proyectos
+              {t.viewProjects}
             </a>
 
             <a
@@ -37,7 +49,7 @@ const Hero = () => {
               download
               className="border border-slate-600 hover:border-blue-400 px-6 py-3 rounded-xl font-medium transition"
             >
-              Descargar CV
+              {t.downloadCv}
             </a>
           </div>
         </motion.div>
@@ -54,9 +66,7 @@ const Hero = () => {
           />
 
           <h2 className="text-2xl font-bold mt-6">Franco Sassi</h2>
-          <p className="text-slate-400 mt-2">
-            React · ASP.NET Core · SQL Server
-          </p>
+          <p className="text-slate-400 mt-2">React · ASP.NET Core · SQL Server</p>
         </motion.div>
       </div>
     </section>

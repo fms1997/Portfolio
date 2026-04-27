@@ -1,5 +1,3 @@
-// src/components/Technologies.jsx
-
 const technologies = [
   "React",
   "JavaScript",
@@ -19,13 +17,16 @@ const technologies = [
   "AFIP Web Services",
 ];
 
-const Technologies = () => {
+const titles = {
+  es: "Tecnologías",
+  en: "Technologies",
+};
+
+const Technologies = ({ lang }) => {
   return (
     <section id="tecnologias" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-10">
-          Tecnologías
-        </h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-10">{titles[lang]}</h2>
 
         <div className="flex flex-wrap gap-4">
           {technologies.map((tech) => (
