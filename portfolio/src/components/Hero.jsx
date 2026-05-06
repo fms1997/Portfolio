@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import profile from "../assets/profile.jpg";
-import cv from "../assets/cv-franco-sassi.pdf";
+// import cv from "../assets/cv-franco-sassi.pdf";
+import cvSpanish from "../assets/cv-franco-sassi.pdf";
+import cvEnglish from "../assets/CV-FrancoSassiEnglish.pdf";
 
 const texts = {
   es: {
@@ -20,11 +22,15 @@ const texts = {
     downloadCv: "Download CV",
   },
 };
+const cvFiles = {
+  es: { file: cvSpanish, downloadName: "CV-FrancoSassi.pdf" },
+  en: { file: cvEnglish, downloadName: "CV-FrancoSassiEnglish.pdf" },
+};
 
 const Hero = ({ lang, theme }) => {
   const t = texts[lang];
   const isLight = theme === "light";
-
+  const selectedCv = cvFiles[lang] ?? cvFiles.es;
   return (
     <section id="inicio" className="min-h-screen flex items-center pt-24 px-6">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
@@ -57,8 +63,8 @@ const Hero = ({ lang, theme }) => {
             </a>
 
             <a
-              href={cv}
-              download
+              href={selectedCv.file}
+              download={selectedCv.downloadName}
               className={`px-6 py-3 rounded-xl font-medium transition ${
                 isLight
                   ? "border border-slate-500 hover:border-blue-400"
