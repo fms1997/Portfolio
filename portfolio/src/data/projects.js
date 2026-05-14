@@ -1,7 +1,59 @@
 import brioProyectoImage from "../assets/brioproyecto.png";
 import ecommerceImage from "../assets/ecommerce.png";
-
+import localMindAiImage from "../assets/localmindAiImage.jpg";
 export const projects = [
+    {
+    slug: "localmind-ai",
+    title: {
+      es: "LocalMind AI",
+      en: "LocalMind AI",
+    },
+    type: {
+      es: "Proyecto personal",
+      en: "Personal project",
+    },
+    image: localMindAiImage,
+    url: "https://drive.google.com/file/d/1Hzu3hVtuKHlRn3VCvtyejhj7dYWb76hi/view",
+    github: "",
+    description: {
+      es: "Asistente de IA local full stack con RAG, carga de documentos, autenticación, herramientas, métricas y despliegue local con Docker.",
+      en: "Full stack local AI assistant with RAG, document upload, authentication, tools, metrics and Docker-based local deployment.",
+    },
+    longDescription: {
+      es: "LocalMind AI es un MVP full stack de un asistente de inteligencia artificial local diseñado para consultar documentos personales o técnicos. La aplicación permite registrar e iniciar sesión con autenticación JWT, subir documentos PDF, TXT o Markdown, procesarlos mediante extracción de texto, chunking y embeddings, y realizar preguntas con un flujo RAG que genera respuestas contextuales con fuentes. También incluye chat de IA local mediante Ollama, herramientas simples como calculadora, resumen de texto, extracción de tareas y generación de planes de estudio, historial de conversaciones y un dashboard de métricas para monitorear latencia, uso aproximado de tokens, uso de RAG/herramientas, chunks procesados y errores. El entorno local se ejecuta de forma reproducible con Docker Compose, incluyendo frontend, backend y servicios de IA local.",
+      en: "LocalMind AI is a full stack MVP of a local artificial intelligence assistant designed to query personal or technical documents. The application allows users to register and log in with JWT authentication, upload PDF, TXT or Markdown documents, process them through text extraction, chunking and embeddings, and ask questions using a RAG workflow to generate contextual answers with sources. It also includes local AI chat through Ollama, simple tools such as calculator, text summarization, task extraction and study plan generation, conversation history and a metrics dashboard to monitor latency, approximate token usage, RAG/tool usage, processed chunks and errors. The local environment runs reproducibly with Docker Compose, including frontend, backend and local AI services.",
+    },
+    technologies: [
+      "React",
+      "Vite",
+      "TailwindCSS",
+      "ASP.NET Core",
+      "Entity Framework Core",
+      "SQLite",
+      "JWT",
+      "RAG",
+      "Ollama",
+      "Docker Compose",
+    ],
+    features: {
+      es: [
+        "Registro e inicio de sesión con JWT",
+        "Carga y procesamiento de documentos PDF, TXT y Markdown",
+        "Flujo RAG con embeddings, respuestas contextuales y fuentes",
+        "Chat de IA local integrado con Ollama",
+        "Herramientas para calculadora, resúmenes, tareas y planes de estudio",
+        "Historial de conversaciones y dashboard de métricas",
+      ],
+      en: [
+        "Register and login with JWT",
+        "PDF, TXT and Markdown document upload and processing",
+        "RAG workflow with embeddings, contextual answers and sources",
+        "Local AI chat integrated with Ollama",
+        "Tools for calculator, summaries, tasks and study plans",
+        "Conversation history and metrics dashboard",
+      ],
+    },
+  },
   {
     slug: "sistema-brio",
     title: {

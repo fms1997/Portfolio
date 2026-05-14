@@ -1,47 +1,61 @@
 import { useParams } from "react-router-dom";
-import { projects } from "../data/projects"; // ajustá la ruta si es distinta
+import { projects } from "../data/projects";
 
-const ProjectDetail = () => {
+const texts = {
+  es: {
+    notFound: "Proyecto no encontrado",
+    technologies: "Tecnologías",
+    features: "Funciones",
+    viewProject: "Ver proyecto",
+    github: "GitHub",
+  },
+  en: {
+    notFound: "Project not found",
+    technologies: "Technologies",
+    features: "Features",
+    viewProject: "View project",
+    github: "GitHub",
+  },
+};
+
+const ProjectDetail = ({ lang = "es" }) => {
   const { slug } = useParams();
+  const currentLang = texts[lang] ? lang : "es";
+  const t = texts[currentLang];
 
   const project = projects.find((p) => p.slug === slug);
 
   if (!project) {
-    return <div className="p-4">Proyecto no encontrado</div>;
+    return <div className="p-4">{t.notFound}</div>;
   }
 
   return (
     <div className="p-6 max-w-5xl mx-auto">
-      {/* Imagen */}
       <img
         src={project.image}
-        alt={project.title.es}
+        alt={project.title[currentLang]}
         className="w-full h-64 object-cover rounded-xl mb-6"
       />
 
-      {/* Título */}
       <h1 className="text-3xl font-bold mb-2">
-        {project.title.es}
+        {project.title[currentLang]}
       </h1>
 
-      {/* Tipo */}
       <p className="text-gray-500 mb-4">
-        {project.type.es}
+        {project.type[currentLang]}
       </p>
 
-      {/* Descripción larga */}
       <p className="mb-6">
-        {project.longDescription.es}
+        {project.longDescription[currentLang]}
       </p>
 
-      {/* Tecnologías */}
       <div className="mb-6">
-        <h2 className="text-xl font-semibold mb-2">Tecnologías</h2>
+        <h2 className="text-xl font-semibold mb-2">{t.technologies}</h2>
         <div className="flex flex-wrap gap-2">
-          {project.technologies.map((tech, index) => (
+          {project.technologies.map((tech) => (
             <span
-              key={index}
-              className="bg-gray-200 px-3 py-1 rounded-full text-sm"
+              key={tech}
+              className="bg-gray-200 px-3 py-1 rounded-full text-sm text-slate-900"
             >
               {tech}
             </span>
@@ -49,17 +63,15 @@ const ProjectDetail = () => {
         </div>
       </div>
 
-      {/* Features */}
       <div className="mb-6">
-        <h2 className="text-xl font-semibold mb-2">Funciones</h2>
+        <h2 className="text-xl font-semibold mb-2">{t.features}</h2>
         <ul className="list-disc list-inside space-y-1">
-          {project.features.es.map((feature, index) => (
-            <li key={index}>{feature}</li>
+          {project.features[currentLang].map((feature) => (
+            <li key={feature}>{feature}</li>
           ))}
         </ul>
       </div>
 
-      {/* Links */}
       <div className="flex gap-4">
         {project.url && (
           <a
@@ -68,7 +80,7 @@ const ProjectDetail = () => {
             rel="noopener noreferrer"
             className="bg-blue-600 text-white px-4 py-2 rounded-lg"
           >
-            Ver proyecto
+            {t.viewProject}
           </a>
         )}
 
@@ -79,7 +91,7 @@ const ProjectDetail = () => {
             rel="noopener noreferrer"
             className="bg-gray-800 text-white px-4 py-2 rounded-lg"
           >
-            GitHub
+            {t.github}
           </a>
         )}
       </div>
