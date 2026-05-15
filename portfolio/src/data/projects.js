@@ -1,8 +1,113 @@
 import brioProyectoImage from "../assets/brioproyecto.png";
 import ecommerceImage from "../assets/ecommerce.png";
 import localMindAiImage from "../assets/localmindAiImage.jpg";
-export const projects = [
+import marketWatchImage from "../assets/marketwatch.jpg";
+import taskFlowImage from "../assets/taskflowimage.jpg";
+ export const projects = [
+  {
+    slug: "marketwatch-mvp",
+    title: {
+      es: "MarketWatch MVP",
+      en: "MarketWatch MVP",
+    },
+    type: {
+      es: "Proyecto personal · MVP móvil",
+      en: "Personal project · Mobile MVP",
+    },
+    image: marketWatchImage,
+    url: "",
+    github: "",
+    description: {
+      es: "App móvil para buscar acciones, consultar cotizaciones en tiempo real, analizar datos diarios, revisar precios históricos recientes y gestionar símbolos favoritos.",
+      en: "Mobile app to search stocks, view real-time quotes, analyze daily market data, check recent historical prices and manage favorite symbols.",
+    },
+    longDescription: {
+      es: "MarketWatch MVP es una aplicación móvil full stack construida para consultar información del mercado financiero. Permite buscar acciones, ver detalles de cotización en tiempo real, analizar datos diarios del mercado, revisar precios históricos recientes y administrar símbolos favoritos. El frontend fue desarrollado con React Native, Expo y TypeScript, mientras que el backend utiliza FastAPI y se integra con Alpha Vantage para obtener datos financieros. El proyecto me ayudó a practicar desarrollo móvil full stack, diseño de APIs REST, integración con APIs externas, manejo de estado, manejo de errores, caching y visualización de datos. Actualmente es un MVP; los próximos pasos incluyen almacenamiento persistente, autenticación, seguimiento de portafolios y despliegue.",
+      en: "MarketWatch MVP is a full stack mobile application built to query financial market information. It allows users to search for stocks, view real-time quote details, analyze daily market data, check recent historical prices and manage favorite symbols. The frontend was built with React Native, Expo and TypeScript, while the backend uses FastAPI and integrates with Alpha Vantage to retrieve financial data. This project helped me practice full-stack mobile development, REST API design, external API integration, state management, error handling, caching and data visualization. It is currently an MVP; next steps include persistent storage, authentication, portfolio tracking and deployment.",
+    },
+    technologies: [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "FastAPI",
+      "Alpha Vantage",
+      "REST API",
+      "Caching",
+      "Data Visualization",
+    ],
+    features: {
+      es: [
+        "Búsqueda de acciones por símbolo",
+        "Detalles de cotización en tiempo real",
+        "Análisis de datos diarios del mercado",
+        "Consulta de precios históricos recientes",
+        "Gestión de símbolos favoritos",
+        "Integración backend con Alpha Vantage",
+      ],
+      en: [
+        "Stock search by symbol",
+        "Real-time quote details",
+        "Daily market data analysis",
+        "Recent historical price lookup",
+        "Favorite symbol management",
+        "Backend integration with Alpha Vantage",
+      ],
+    },
+  },
+  {
+    slug: "taskflow-mvp",
+    title: {
+      es: "TaskFlow MVP",
+      en: "TaskFlow MVP",
+    },
+    type: {
+      es: "Proyecto personal · Aplicación full stack",
+      en: "Personal project · Full stack application",
+    },
+    image: taskFlowImage,
+    url: "",
+    github: "",
+    description: {
+      es: "Aplicación full stack para gestionar proyectos y tareas con autenticación JWT, rutas protegidas, dashboard de métricas y filtros avanzados.",
+      en: "Full stack application for managing projects and tasks with JWT authentication, protected routes, metrics dashboard and advanced filters.",
+    },
+    longDescription: {
+      es: "TaskFlow MVP es una aplicación full stack para la gestión de proyectos y tareas, diseñada para ir más allá de un CRUD simple y acercarse a un flujo de trabajo real. El backend está construido con Java, Spring Boot, Spring Data JPA, Spring Security, JWT y PostgreSQL, con Docker Compose para ejecutar la base de datos localmente. La API incluye registro de usuarios, autenticación, endpoints protegidos y operaciones CRUD para usuarios, proyectos y tareas. En el frontend utilicé Angular con rutas protegidas, HTTP Client, formularios reactivos y un interceptor JWT para enviar automáticamente el token de autenticación. Desde la UI, los usuarios pueden iniciar sesión, ver un dashboard, crear y editar tareas, asignarlas a usuarios y proyectos, y filtrarlas por estado, prioridad, usuario asignado y rango de fecha de vencimiento. El dashboard muestra métricas como tareas totales, pendientes, en progreso, completadas, de alta prioridad, vencidas y porcentaje de finalización.",
+      en: "TaskFlow MVP is a full stack application for managing projects and tasks, designed to go beyond a simple CRUD and get closer to a real-world workflow. The backend is built with Java, Spring Boot, Spring Data JPA, Spring Security, JWT and PostgreSQL, with Docker Compose to run the database locally. The API includes user registration, authentication, protected endpoints and CRUD operations for users, projects and tasks. On the frontend I used Angular with protected routes, HTTP Client, reactive forms and a JWT interceptor to automatically send the authentication token. From the UI, users can log in, view a dashboard, create and edit tasks, assign them to users and projects, and filter them by status, priority, assigned user and due date range. The dashboard displays metrics such as total tasks, pending tasks, tasks in progress, completed tasks, high-priority tasks, overdue tasks and completion percentage.",
+    },
+    technologies: [
+      "Java",
+      "Spring Boot",
+      "Spring Data JPA",
+      "Spring Security",
+      "JWT",
+      "PostgreSQL",
+      "Docker Compose",
+      "Angular",
+      "Reactive Forms",
+      "HTTP Client",
+    ],
+    features: {
+      es: [
+        "Registro, login y endpoints protegidos con JWT",
+        "CRUD de usuarios, proyectos y tareas",
+        "Rutas protegidas e interceptor JWT en Angular",
+        "Creación, edición y asignación de tareas",
+        "Filtros por estado, prioridad, usuario asignado y vencimiento",
+        "Dashboard con métricas de avance y prioridad",
+      ],
+      en: [
+        "Registration, login and JWT-protected endpoints",
+        "CRUD for users, projects and tasks",
+        "Protected routes and JWT interceptor in Angular",
+        "Task creation, editing and assignment",
+        "Filters by status, priority, assigned user and due date",
+        "Dashboard with progress and priority metrics",
+      ],
+    },
+  },
     {
+      
     slug: "localmind-ai",
     title: {
       es: "LocalMind AI",
