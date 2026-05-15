@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import profile from "../assets/profile.jpg";
-// import cv from "../assets/cv-franco-sassi.pdf";
 import cvSpanish from "../assets/cv-franco-sassi.pdf";
 import cvEnglish from "../assets/CV-FrancoSassiEnglish.pdf";
 
@@ -9,7 +8,7 @@ const texts = {
     role: "Desarrollador Full Stack",
     greeting: "Hola, soy",
     summary:
-      "Desarrollo sistemas web modernos con React, ASP.NET Core y SQL Server. Me especializo en soluciones empresariales, facturación electrónica, logística, APIs REST y automatización de procesos.",
+      "Desarrollo soluciones full stack modernas: sistemas empresariales, apps móviles, e-commerce, dashboards y asistentes con IA. Trabajo con React, Next.js, React Native, Angular, ASP.NET Core, Spring Boot, SQL Server y PostgreSQL para crear productos escalables, claros y orientados a procesos reales.",
     viewProjects: "Ver proyectos",
     downloadCv: "Descargar CV",
   },
@@ -17,20 +16,25 @@ const texts = {
     role: "Full Stack Developer",
     greeting: "Hi, I'm",
     summary:
-      "I build modern web systems with React, ASP.NET Core and SQL Server. I specialize in business solutions, electronic invoicing, logistics, REST APIs and process automation.",
+      "I build modern full-stack solutions: business systems, mobile apps, ecommerce platforms, dashboards and AI assistants. I work with React, Next.js, React Native, Angular, ASP.NET Core, Spring Boot, SQL Server and PostgreSQL to create scalable, clear products focused on real workflows.",
     viewProjects: "View projects",
     downloadCv: "Download CV",
   },
 };
+
 const cvFiles = {
   es: { file: cvSpanish, downloadName: "CV-FrancoSassi.pdf" },
   en: { file: cvEnglish, downloadName: "CV-FrancoSassiEnglish.pdf" },
 };
 
-const Hero = ({ lang, theme }) => {
-  const t = texts[lang];
+const highlightedStack = ["React", "Next.js", "React Native", "ASP.NET Core", "Spring Boot"];
+
+const Hero = ({ lang = "es", theme }) => {
+  const currentLang = texts[lang] ? lang : "es";
+  const t = texts[currentLang];
+  const selectedCv = cvFiles[currentLang];
   const isLight = theme === "light";
-  const selectedCv = cvFiles[lang] ?? cvFiles.es;
+
   return (
     <section id="inicio" className="min-h-screen flex items-center pt-24 px-6">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
@@ -40,8 +44,7 @@ const Hero = ({ lang, theme }) => {
           </p>
 
           <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-            {t.greeting}{" "}
-            <span className={isLight ? "text-black" : "text-blue-400"}>Franco Sassi</span>
+            {t.greeting} <span className={isLight ? "text-black" : "text-blue-400"}>Franco Sassi</span>
           </h1>
 
           <p
@@ -88,7 +91,7 @@ const Hero = ({ lang, theme }) => {
           />
 
           <h2 className="text-2xl font-bold mt-6">Franco Sassi</h2>
-          <p className="text-slate-400 mt-2">React · ASP.NET Core · SQL Server</p>
+          <p className="text-slate-400 mt-2">{highlightedStack.join(" · ")}</p>
         </motion.div>
       </div>
     </section>

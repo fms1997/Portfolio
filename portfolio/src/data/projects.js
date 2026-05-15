@@ -15,9 +15,9 @@ import taskFlowImage from "../assets/taskflowimage.jpg";
       en: "Personal project · Mobile MVP",
     },
     image: marketWatchImage,
-    url: "",
-    github: "",
-    description: {
+    url: "https://drive.google.com/file/d/1OcUDkys-mIDXsLKNPYsFRaKCyvKsNQhp/view",
+        github: "https://github.com/Franco97sassi/MarketWatchMvp.git",
+        description: {
       es: "App móvil para buscar acciones, consultar cotizaciones en tiempo real, analizar datos diarios, revisar precios históricos recientes y gestionar símbolos favoritos.",
       en: "Mobile app to search stocks, view real-time quotes, analyze daily market data, check recent historical prices and manage favorite symbols.",
     },
@@ -65,9 +65,9 @@ import taskFlowImage from "../assets/taskflowimage.jpg";
       en: "Personal project · Full stack application",
     },
     image: taskFlowImage,
-    url: "",
-    github: "",
-    description: {
+    url: "https://drive.google.com/file/d/1zPQV_NK-2Dsdu_0LJvb-XOWL4xchSPT_/view",
+        github: "https://github.com/Franco97sassi/ProyectoTaskFlow.git",
+        description: {
       es: "Aplicación full stack para gestionar proyectos y tareas con autenticación JWT, rutas protegidas, dashboard de métricas y filtros avanzados.",
       en: "Full stack application for managing projects and tasks with JWT authentication, protected routes, metrics dashboard and advanced filters.",
     },
@@ -119,8 +119,8 @@ import taskFlowImage from "../assets/taskflowimage.jpg";
     },
     image: localMindAiImage,
     url: "https://drive.google.com/file/d/1Hzu3hVtuKHlRn3VCvtyejhj7dYWb76hi/view",
-    github: "",
-    description: {
+    github: "https://github.com/Franco97sassi/MVP-IA-Empresarial.git",
+        description: {
       es: "Asistente de IA local full stack con RAG, carga de documentos, autenticación, herramientas, métricas y despliegue local con Docker.",
       en: "Full stack local AI assistant with RAG, document upload, authentication, tools, metrics and Docker-based local deployment.",
     },
@@ -220,8 +220,8 @@ import taskFlowImage from "../assets/taskflowimage.jpg";
     },
     image: ecommerceImage,
     url: "https://fullstack-ecommerce-green-two.vercel.app/",
-    github: "",
-    description: {
+    github: "https://github.com/Franco97sassi/FullStackEcommerce.git",
+        description: {
       es: "Proyecto e-commerce full stack con frontend en Next.js, backend en ASP.NET Core, autenticación JWT, catálogo, carrito, checkout, órdenes y panel admin.",
       en: "Full stack ecommerce project with a Next.js frontend, ASP.NET Core backend, JWT authentication, catalog, cart, checkout, orders and admin panel.",
     },
